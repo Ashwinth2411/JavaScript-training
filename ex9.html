@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Input</title>
+</head>
+<body>
+    <h3 id="head">Welcome</h3>
+    <label>Username :</label>
+    <input type="text" id="usr"><br>
+    <button type="submit" id="submit">Submit</button>
+</body>
+<script>
+    document.getElementById('submit').onclick = function(){
+        userName = document.getElementById('usr').value;
+        document.getElementById('head').textContent = `Hiiii Mr.${userName}`;
+    }
+</script>
+<!--script la text irruku atha use or alter panna um na text content moola ya ma text access panna laam-->
+</html>
+
+
+<!--let userName = window.prompt("Enter your Name....!");
+    console.log(userName);--->

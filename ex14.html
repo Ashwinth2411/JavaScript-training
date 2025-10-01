@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Training</title>
+</head>
+<style>
+    .card{
+        background-color: black;
+        color: white;
+        text-align: center;
+        justify-content: center;
+        width: 300px;
+        margin: 0 auto;
+        border-radius: 10px;
+        padding: 10px;
+        position: relative;
+    }
+    .title{
+        color: salmon;
+    }
+    @property --angle{
+        syntax: "<angle>";
+        initial-value: 0deg;
+        inherits: false;
+    }
+    .card::after , .card::before{
+        content: '';
+        background-image: conic-gradient( rgb(144, 181, 24), rgb(19, 83, 181), rgb(150, 54, 194), rgb(102, 45, 9));
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        z-index: -1;  
+        padding: 5px;  
+
+    }
+    .card::before{
+        filter: blur(1.5rem);
+        opacity: 0.5;
+    }
+    @keyframes spin{
+        from{
+            --angle: 0deg;
+        }
+        to{
+            --angle: 360deg;
+        }
+    }
+
+</style>
+
+<body>
+    <div class="card">
+        <h2 class="title">coloring loop</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis accusamus ullam voluptates? Quos sed delectus
+        laboriosam veniam tempora atque itaque recusandae aliquam soluta quidem provident assumenda possimus corrupti
+        quas beatae eius expedita reiciendis, quis qui iste sequi. Explicabo recusandae vel libero minus nobis nam
+        consectetur nulla architecto, ad deleniti eligendi accusantium qui veritatis obcaecati! Animi ab quae minima non
+        laudantium provident saepe perferendis officia soluta. Sunt ea aperiam fugiat, eveniet molestias itaque modi
+        porro temporibus veritatis accusantium, beatae, ratione labore culpa dicta perferendis fuga possimus quasi quis
+        nisi! Impedit in ipsa assumenda hic omnis eius harum necessitatibus sed maiores voluptatibus.</p>
+    </div>
+    
+
+</body>
+
+</html>
